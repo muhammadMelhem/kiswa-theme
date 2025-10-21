@@ -1,0 +1,633 @@
+/* Login Page - Kiswa Fashion Theme */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+.kcLoginClass {
+    display: flex;
+    min-height: 100vh;
+    animation: fadeIn 0.8s ease-out;
+}
+
+/* Left Side: Fashion-focused Panel */
+.fashionPanel {
+    flex-basis: 50%;
+    background: linear-gradient(135deg, var(--brand-secondary) 0%, #f5f0e8 100%);
+    color: var(--text-dark);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px;
+    position: relative;
+    overflow: hidden;
+    animation: slideInFromLeft 0.8s ease-out;
+}
+
+.fashionPanel::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path fill="%238B7355" fill-opacity="0.05" d="M50,0 C77.614,0 100,22.386 100,50 C100,77.614 77.614,100 50,100 C22.386,100 0,77.614 0,50 C0,22.386 22.386,0 50,0 Z M50,10 C27.909,10 10,27.909 10,50 C10,72.091 27.909,90 50,90 C72.091,90 90,72.091 90,50 C90,27.909 72.091,10 50,10 Z"/></svg>');
+    background-size: 200px;
+    opacity: 0.3;
+    animation: floatBackground 20s linear infinite;
+}
+
+.brandHeader {
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 2;
+    animation: fadeInUp 0.8s ease-out 0.3s both;
+}
+
+.brandLogo {
+    width: 180px;
+    height: 180px;
+    margin: 0 auto 20px;
+    background: radial-gradient(circle, var(--brand-primary) 0%, var(--brand-primary-hover) 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 72px;
+    color: white;
+    font-family: var(--font-family-heading);
+    font-weight: 700;
+    box-shadow: var(--shadow-xl);
+    animation: bounceIn 1s ease-out 0.5s both;
+}
+
+.brandHeader h1 {
+    font-family: var(--font-family-heading);
+    font-size: 42px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: var(--brand-primary);
+}
+
+.brandHeader p {
+    font-size: 18px;
+    max-width: 400px;
+    margin: 0 auto;
+    color: var(--text-medium);
+}
+
+.fashionQuote {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 500px;
+    margin-top: 40px;
+    padding: 25px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    animation: fadeInUp 0.8s ease-out 0.7s both;
+}
+
+.fashionQuote p {
+    font-style: italic;
+    font-size: 16px;
+    color: var(--text-medium);
+    line-height: 1.8;
+}
+
+/* Right Side: Form Panel */
+.formPanel {
+    flex-basis: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 40px;
+    background-color: var(--background-light);
+    animation: slideInFromRight 0.8s ease-out;
+}
+
+.kcFormCardClass {
+    width: 100%;
+    max-width: 420px;
+    animation: fadeInUp 0.8s ease-out 0.4s both;
+}
+
+.kcFormHeaderClass {
+    margin-bottom: 40px;
+    text-align: center;
+    animation: fadeInUp 0.8s ease-out 0.5s both;
+}
+
+.kcFormHeaderClass h1 {
+    font-family: var(--font-family-heading);
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--brand-primary);
+}
+
+.kcFormHeaderClass p {
+    color: var(--text-medium);
+    font-size: 16px;
+}
+
+/* Form Groups */
+.kcFormGroupClass {
+    margin-bottom: 25px;
+    animation: fadeInUp 0.8s ease-out 0.6s both;
+}
+
+.kcLabelClass {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: var(--text-dark);
+}
+
+.kcInputClass {
+    width: 100%;
+    padding: 15px 18px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    font-size: 15px;
+    background-color: var(--input-background);
+    transition: all var(--transition-base);
+    font-family: var(--font-family-base);
+}
+
+.kcInputClass:focus {
+    outline: none;
+    border-color: var(--brand-primary);
+    box-shadow: 0 0 0 3px rgba(139, 115, 85, 0.1);
+    background-color: var(--background-light);
+    transform: translateY(-2px);
+}
+
+.passwordWrapper {
+    position: relative;
+}
+
+.passwordToggle {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-medium);
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 5px;
+    transition: all var(--transition-base);
+}
+
+.passwordToggle:hover {
+    color: var(--brand-primary);
+    transform: translateY(-50%) scale(1.1);
+}
+
+/* Form Options */
+.kcFormOptionsClass {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    margin-bottom: 30px;
+    animation: fadeInUp 0.8s ease-out 0.8s both;
+}
+
+.kcFormOptionsWrapperClass {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.rememberMe {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.rememberMe input[type="checkbox"] {
+    accent-color: var(--brand-primary);
+    transform: scale(1.1);
+    transition: transform var(--transition-fast);
+}
+
+.rememberMe input[type="checkbox"]:hover {
+    transform: scale(1.2);
+}
+
+.forgotPassword,
+.kcFormOptionsWrapperClass a {
+    color: var(--brand-primary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all var(--transition-base);
+    position: relative;
+}
+
+.forgotPassword:hover,
+.kcFormOptionsWrapperClass a:hover {
+    color: var(--brand-primary-hover);
+}
+
+.forgotPassword::after,
+.kcFormOptionsWrapperClass a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: var(--brand-primary-hover);
+    transition: width var(--transition-base);
+}
+
+.forgotPassword:hover::after,
+.kcFormOptionsWrapperClass a:hover::after {
+    width: 100%;
+}
+
+/* Buttons */
+.kcButtonClass,
+.kcButtonPrimaryClass,
+.kcButtonDefaultClass,
+.kcButtonLargeClass {
+    width: 100%;
+    padding: 16px;
+    border: none;
+    border-radius: var(--radius-md);
+    background-color: var(--brand-primary);
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-base);
+    font-family: var(--font-family-base);
+    position: relative;
+    overflow: hidden;
+    animation: fadeInUp 0.8s ease-out 0.9s both;
+}
+
+.kcButtonClass::before,
+.kcButtonPrimaryClass::before,
+.kcButtonDefaultClass::before,
+.kcButtonLargeClass::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left var(--transition-slow);
+}
+
+.kcButtonClass:hover,
+.kcButtonPrimaryClass:hover,
+.kcButtonDefaultClass:hover,
+.kcButtonLargeClass:hover {
+    background-color: var(--brand-primary-hover);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(139, 115, 85, 0.3);
+}
+
+.kcButtonClass:hover::before,
+.kcButtonPrimaryClass:hover::before,
+.kcButtonDefaultClass:hover::before,
+.kcButtonLargeClass:hover::before {
+    left: 100%;
+}
+
+.kcButtonClass:active,
+.kcButtonPrimaryClass:active,
+.kcButtonDefaultClass:active,
+.kcButtonLargeClass:active {
+    transform: translateY(-1px);
+}
+
+/* Social Logins */
+.kcFormSocialAccountSectionClass {
+    margin-top: 30px;
+}
+
+.kcFormSocialAccountContentClass {
+    animation: fadeInUp 0.8s ease-out 1s both;
+}
+
+.kcFormSocialAccountContentClass::before {
+    content: attr(data-text);
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 30px 0;
+    color: var(--text-medium);
+    font-size: 14px;
+}
+
+.kcFormSocialAccountContentClass::before {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 30px 0;
+    color: var(--text-medium);
+}
+
+.divider::before,
+.divider::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.divider span {
+    padding: 0 15px;
+    font-size: 14px;
+}
+
+.kcFormSocialAccountListClass {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    list-style: none;
+    padding: 0;
+    margin: 20px 0 0 0;
+    animation: fadeInUp 0.8s ease-out 1.1s both;
+}
+
+.kcFormSocialAccountListButtonClass,
+.kcFormSocialAccountGridItem button,
+.kcFormSocialAccountListLinkClass {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 14px;
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all var(--transition-base);
+    background-color: white;
+    border: 1px solid var(--border-color);
+    color: var(--text-dark);
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    cursor: pointer;
+    font-size: 15px;
+    font-family: var(--font-family-base);
+}
+
+.kcFormSocialAccountListButtonClass::before,
+.kcFormSocialAccountGridItem button::before,
+.kcFormSocialAccountListLinkClass::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left var(--transition-slow);
+}
+
+.kcFormSocialAccountListButtonClass:hover::before,
+.kcFormSocialAccountGridItem button:hover::before,
+.kcFormSocialAccountListLinkClass:hover::before {
+    left: 100%;
+}
+
+.kcFormSocialAccountListButtonClass:hover,
+.kcFormSocialAccountGridItem button:hover,
+.kcFormSocialAccountListLinkClass:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+/* Google-specific styling */
+.kcFormSocialAccountListButtonClass[data-provider*="google"],
+.kcFormSocialAccountGridItem button[data-provider*="google"],
+a[href*="google"].kcFormSocialAccountListLinkClass,
+.google {
+    border-color: #DB4437;
+    color: #DB4437;
+}
+
+.kcFormSocialAccountListButtonClass[data-provider*="google"]:hover,
+.kcFormSocialAccountGridItem button[data-provider*="google"]:hover,
+a[href*="google"].kcFormSocialAccountListLinkClass:hover,
+.google:hover {
+    background-color: #FFF3F2;
+    border-color: #DB4437;
+    box-shadow: 0 5px 15px rgba(219, 68, 55, 0.2);
+}
+
+/* Facebook-specific styling */
+.kcFormSocialAccountListButtonClass[data-provider*="facebook"],
+.kcFormSocialAccountGridItem button[data-provider*="facebook"],
+a[href*="facebook"].kcFormSocialAccountListLinkClass,
+.facebook {
+    border-color: #1877F2;
+    color: #1877F2;
+}
+
+.kcFormSocialAccountListButtonClass[data-provider*="facebook"]:hover,
+.kcFormSocialAccountGridItem button[data-provider*="facebook"]:hover,
+a[href*="facebook"].kcFormSocialAccountListLinkClass:hover,
+.facebook:hover {
+    background-color: #F0F8FF;
+    border-color: #1877F2;
+    box-shadow: 0 5px 15px rgba(24, 119, 242, 0.2);
+}
+
+/* Signup/Register Prompt */
+.kcFormGroupClass:last-child,
+.kcInfoAreaWrapperClass {
+    text-align: center;
+    margin-top: 30px;
+    color: var(--text-medium);
+    animation: fadeInUp 0.8s ease-out 1.2s both;
+}
+
+.kcFormGroupClass:last-child a,
+.kcInfoAreaWrapperClass a {
+    color: var(--brand-primary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all var(--transition-base);
+    position: relative;
+}
+
+.kcFormGroupClass:last-child a:hover,
+.kcInfoAreaWrapperClass a:hover {
+    color: var(--brand-primary-hover);
+}
+
+.kcFormGroupClass:last-child a::after,
+.kcInfoAreaWrapperClass a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: var(--brand-primary-hover);
+    transition: width var(--transition-base);
+}
+
+.kcFormGroupClass:last-child a:hover::after,
+.kcInfoAreaWrapperClass a:hover::after {
+    width: 100%;
+}
+
+/* Alerts */
+.kcAlertClass {
+    padding: 15px 20px;
+    border-radius: var(--radius-md);
+    margin-bottom: 25px;
+    animation: shake 0.5s ease-in-out;
+}
+
+.kcAlertErrorClass {
+    background-color: #FDF0EF;
+    color: var(--error-color);
+    border-left: 4px solid var(--error-color);
+}
+
+.kcAlertSuccessClass {
+    background-color: #F0F9F0;
+    color: var(--success-color);
+    border-left: 4px solid var(--success-color);
+    animation: bounceIn 0.6s ease-out;
+}
+
+.kcAlertWarningClass {
+    background-color: #FFF9E6;
+    color: var(--warning-color);
+    border-left: 4px solid var(--warning-color);
+}
+
+.kcAlertInfoClass {
+    background-color: #E8F4F8;
+    color: var(--info-color);
+    border-left: 4px solid var(--info-color);
+}
+
+/* Info Area */
+.kcInfoAreaClass {
+    padding: 15px 20px;
+    background-color: var(--background-secondary);
+    border-radius: var(--radius-md);
+    margin-bottom: 20px;
+    animation: fadeInUp 0.5s ease-out;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+    .kcLoginClass {
+        flex-direction: column;
+    }
+
+    .fashionPanel {
+        flex-basis: 40%;
+        padding: 40px 20px;
+        animation: slideInFromTop 0.8s ease-out;
+    }
+
+    .formPanel {
+        flex-basis: 60%;
+        padding: 40px 20px;
+        animation: slideInFromBottom 0.8s ease-out;
+    }
+
+    .brandLogo {
+        width: 140px;
+        height: 140px;
+        font-size: 56px;
+    }
+
+    .brandHeader h1 {
+        font-size: 32px;
+    }
+}
+
+@media (max-width: 600px) {
+    .fashionPanel {
+        display: none;
+    }
+
+    .formPanel {
+        flex-basis: 100%;
+        justify-content: flex-start;
+        padding: 40px 20px;
+    }
+}
+
+/* Loading state for buttons */
+.kcButtonClass.loading,
+.kcButtonPrimaryClass.loading,
+.kcButtonDefaultClass.loading,
+.kcButtonLargeClass.loading {
+    pointer-events: none;
+    opacity: 0.8;
+}
+
+.kcButtonClass.loading::after,
+.kcButtonPrimaryClass.loading::after,
+.kcButtonDefaultClass.loading::after,
+.kcButtonLargeClass.loading::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    left: 50%;
+    margin: -10px 0 0 -10px;
+    border: 2px solid transparent;
+    border-top: 2px solid #ffffff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes floatBackground {
+    0% {
+        transform: translateX(0) translateY(0);
+    }
+    50% {
+        transform: translateX(-50px) translateY(-25px);
+    }
+    100% {
+        transform: translateX(0) translateY(0);
+    }
+}
+
+@keyframes slideInFromTop {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInFromBottom {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

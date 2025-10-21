@@ -1,0 +1,114 @@
+/* Admin Console Theme - Kiswa Fashion */
+@import url('../login/styles/kiswa-theme.css');
+
+/* Admin console color overrides */
+:root {
+    --pf-global--primary-color--100: var(--brand-primary);
+    --pf-global--primary-color--200: var(--brand-primary-hover);
+    --pf-global--link--Color: var(--brand-primary);
+    --pf-global--link--Color--hover: var(--brand-primary-hover);
+    --pf-global--BackgroundColor--100: var(--background-light);
+    --pf-global--BackgroundColor--200: var(--background-secondary);
+}
+
+/* Override PatternFly styles */
+.pf-c-page__header {
+    background-color: var(--brand-primary);
+}
+
+.pf-c-button.pf-m-primary {
+    background-color: var(--brand-primary);
+    border-color: var(--brand-primary);
+}
+
+.pf-c-button.pf-m-primary:hover {
+    background-color: var(--brand-primary-hover);
+    border-color: var(--brand-primary-hover);
+}
+
+/* Navigation */
+.pf-c-nav__link.pf-m-current,
+.pf-c-nav__link.pf-m-current:hover {
+    background-color: var(--brand-primary);
+    color: var(--text-light);
+}
+
+.pf-c-nav__link:hover {
+    background-color: var(--background-secondary);
+    color: var(--brand-primary);
+}
+
+/* Cards */
+.pf-c-card {
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+}
+
+.pf-c-card__title {
+    color: var(--brand-primary);
+    font-family: var(--font-family-heading);
+}
+
+/* Forms */
+.pf-c-form-control:focus {
+    border-color: var(--brand-primary);
+    box-shadow: 0 0 0 0.125rem rgba(139, 115, 85, 0.25);
+}
+
+/* Tables */
+.pf-c-table thead {
+    background-color: var(--background-secondary);
+}
+
+.pf-c-table tr:hover {
+    background-color: var(--background-secondary);
+}
+
+/* Alerts */
+.pf-c-alert.pf-m-success {
+    background-color: #F0F9F0;
+    border-left-color: var(--success-color);
+}
+
+.pf-c-alert.pf-m-danger {
+    background-color: #FDF0EF;
+    border-left-color: var(--error-color);
+}
+
+.pf-c-alert.pf-m-warning {
+    background-color: #FFF9E6;
+    border-left-color: var(--warning-color);
+}
+
+.pf-c-alert.pf-m-info {
+    background-color: #E8F4F8;
+    border-left-color: var(--info-color);
+}
+
+/* Breadcrumbs */
+.pf-c-breadcrumb__link {
+    color: var(--brand-primary);
+}
+
+.pf-c-breadcrumb__link:hover {
+    color: var(--brand-primary-hover);
+}
+
+/* Tabs */
+.pf-c-tabs__link.pf-m-current {
+    border-bottom-color: var(--brand-primary);
+    color: var(--brand-primary);
+}
+
+/* Badges */
+.pf-c-badge {
+    background-color: var(--brand-primary);
+    color: var(--text-light);
+}
+
+/* Modal dialogs */
+.pf-c-modal-box__title {
+    color: var(--brand-primary);
+    font-family: var(--font-family-heading);
+}
